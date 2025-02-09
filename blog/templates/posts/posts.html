@@ -10,10 +10,11 @@
 <div class="container mt-3 text-center">
     <div class="row justify-content-center">
         <div class="col-md-auto">
-            <a href="?ordenar=fecha"><button class="btn btn-primary">Ordenar por fecha</button></a>
-            <a href="?ordenar=alfabetico"><button class="btn btn-secondary">Ordenar alfabéticamente</button></a>
+            <a href="?ordenar=fecha"><button class="estilo-boton">Ordenar por fecha</button></a>
+            <a href="?ordenar=alfabetico"><button class="estilo-boton">Ordenar alfabéticamente</button></a>
         </div>
     </div>
+
 
     <div class="row justify-content-center mt-3">
         <div class="col-md-auto">
@@ -27,6 +28,16 @@
     </div>
 </div>
 
+<br>
+<br>
+<br>
+{% if user.is_superuser or request.user|has_group:"Colaborador" %}
+
+<a id="boton_post" href="{% url 'apps.posts:crear_post' %}" style="padding: 5px 10px; background-color: #575f68; color: white; text-decoration: none; border-radius: 10px; margin-left: 25px; font-weight: bold;">Crear nuevo post</a>
+
+{% endif %}
+
+
 <!-- Contenedor principal de los posts -->
 <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh; width: 100vw; margin-top: 20px;">
     <div class="container">
@@ -34,7 +45,7 @@
             {% for i in posts %}
             <div class="col-md-4 mb-4">
                 <div class="card mb-4 h-100">
-                    <img src="{{ i.imagen.url }}" class="card-img-top" alt="Imagen de noticia">
+                    <img src="{{ i.imagen.url }}" class="card-img-top img-fluid w-100 h-50" alt="Imagen de noticia">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ i.titulo }}</h5>
                         <p class="card-text flex-grow-1">{{ i.texto | truncatechars:45 }} 
