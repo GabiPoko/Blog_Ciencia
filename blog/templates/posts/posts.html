@@ -5,6 +5,12 @@
 
 {% block contenido %}
 
+<body style="background-color: #212529;">
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.2;">
+        <img src="{% static 'img/fondo.png' %}" alt="Fondo" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+</body>
+
 
 <!-- Filtros de orden y categorías -->
 <div class="container mt-3 text-center">
@@ -30,10 +36,10 @@
 
 <br>
 <br>
-<br>
+
 {% if user.is_superuser or request.user|has_group:"Colaborador" %}
 
-<a id="boton_post" href="{% url 'apps.posts:crear_post' %}" style="padding: 5px 10px; background-color: #575f68; color: white; text-decoration: none; border-radius: 10px; margin-left: 25px; font-weight: bold;">Crear nuevo post</a>
+<a class="boton-post" href="{% url 'apps.posts:crear_post' %}" >Crear nuevo post</a>
 
 {% endif %}
 

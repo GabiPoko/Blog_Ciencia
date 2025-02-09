@@ -9,12 +9,15 @@
   }
 
 
-.navbar-nav .nav-item {
+.navbar-nav .nav-item .nav-link {
     font-weight: bold;
     color: rgb(53, 48, 48);
     text-decoration: ;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra suave */
     margin: 0 15px;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  color: #12d64d;
 }
 
 .display-4 {
@@ -37,21 +40,23 @@ h2 {
   }
 
 .estilo-boton {
-  background-color: white;
+  background-color: rgb(71, 59, 104);
   margin-top: -20px;
   text-decoration: none;
   border-radius: 10px;
-  color: rgb(39, 37, 37);
+  color: rgb(253, 249, 249);
   padding: 10px 20px;
   text-align: center;
   display: inline-block;
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
+  border-color: whitesmoke;
 }
 
 .estilo-boton:hover {
-  background-color: #cbf3d3;
+  background-color: #8683a5;
+  color:black;
 }
   
 
@@ -66,20 +71,23 @@ h2 {
   }
 
 .contenedor-categorias a {
+    background-color: rgb(71, 59, 104);
     margin-top: -20px;
     text-decoration: none;
     border-radius: 10px;
-    color: rgb(39, 37, 37);
+    color: rgb(248, 245, 245);
     padding: 10px 20px;
     text-align: center;
     display: inline-block;
     font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
+    border-color: whitesmoke;
   }
   
 .contenedor-categorias a:hover {
-    background-color: #cbf3d3;
+    background-color: #8683a5;
+    color:black;
   }
 
 .container-fluid .container { /* Centra los elementos dentro de .container */
@@ -95,6 +103,27 @@ h2 {
   margin-left: 20px;
   font-weight: bold;
   }
+
+  .boton-post {
+    padding: 5px 10px;
+    background-color: rgb(71, 59, 104);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left: 110px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
+    font-size: 15px;
+}
+
+.boton-post:hover {
+    background-color: #5a5806; /* Color de fondo más oscuro al pasar el cursor */
+    border-color: #0056b3; /* Color de borde diferente al pasar el cursor */
+    cursor: pointer; /* Cambiar el cursor a una mano */
+}
+
+
   
 
 
