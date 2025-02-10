@@ -11,6 +11,8 @@ class CrearPostForm (forms.ModelForm):
         model = Post
         fields = '__all__'
 
+
+
 class NuevaCategoriaForm (forms.ModelForm):
     class Meta:
         model = Categoria
