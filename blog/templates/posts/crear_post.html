@@ -10,25 +10,25 @@
     <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.2;">
         <img src="{% static 'img/fondo.png' %}" alt="Fondo" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
-</body>
+
 
 
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
-    <div class="container mt-5">  {# Added container and margin-top #}
-        <div class="row justify-content-center"> {# Added row and justify-content for centering #}
-            <div class="col-md-8"> {# Added column width for responsiveness #}
-                <div class="mb-4"> {# Added margin-bottom for spacing #}
+    <div class="container mt-5">  
+        <div class="row justify-content-center mb-5" style="margin-left: 130px;"> 
+            <div class="col-md-8">
+                <div class="mb-4"> 
                     <a id="boton_post" href="{% url 'apps.posts:crear_categoria' %}" class="btn btn-primary">Crear nueva categoría</a> {# Styled button #}
                 </div>
-            <div class="col-md-8">
-                <div class= 'shadow-lg p-4 bg-dark text-light border border-white'>
+            <div class="col-md-8 shadow-lg p-4 bg-dark text-light border border-white">
+                
                 <h1>Crear Post</h1>
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Guardar" class="btn btn-success"> 
                 </form>
-            </div>
+            
             </div>
         </div>
     </div>
@@ -41,26 +41,9 @@
             </div>
         </div>
     </div>
+</body>
 {% endif %}
-<!-- {% if user.is_superuser or request.user|has_group:"Colaborador" %}
 
-    <div class="container-fluid" style="margin: 200px;">
-        <div class="container-fluid" style="margin-top: 300px;">
-            <a id="boton_post" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoría</a>
-        </div>
-
-        <h1>Crear Post</h1>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Guardar">
-        </form>
-    </div>
-{% else %}
-    <div class="container-fluid" style="margin: 300px;">
-        <h1> Solo usuarios con permiso pueden acceder a esta pagina.</h1>
-    </div>
-{% endif %} -->
 
 
 {% endblock %}
