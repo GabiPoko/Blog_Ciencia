@@ -4,20 +4,20 @@
     height: 100px; 
     border-radius: 100%; /* Hace la imagen redonda */
     border: 2px solid #fff; /* Crea un borde blanco */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+    box-shadow: 0px 0px 10px rgba(248, 248, 247, 0.4); /* Agrega una sombra */
     object-fit: cover; /* Evita que la imagen se distorsione */
   }
 
 
 .navbar-nav .nav-item .nav-link {
     font-weight: bold;
-    color: rgb(53, 48, 48);
+    color: rgb(228, 222, 222);
     text-decoration: ;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    text-shadow: 1px 1px 2px rgba(131, 128, 128, 0.3); /* Sombra suave */
     margin: 0 15px;
 }
 .navbar-nav .nav-item .nav-link:hover {
-  color: #12d64d;
+  color: #a7ca0a;
 }
 
 .display-4 {
