@@ -1,27 +1,31 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block contenido %}
-<center>
 
-    {% if user.is_superuser or comentario.usuario == user %}
-    <div class="container-fluid" style="margin: 300px;">
+   <body style="background-color: #212529; color: whitesmoke;">
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.2;">
+        <img src="{% static 'img/fondo.png' %}" alt="Fondo" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>>
+    
+   
 
-        <h1>Editar comentario</h1>
-        <form method="POST" style="margin-bottom: 10px; margin-top: 100px">
-
-            {% csrf_token %}
-            {{ form.as_p}}
-
-            <input type="submit" value="Guardar cambios">
-        </form>
-
+    <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+        <div class="card bg-dark text-light border border-white p-4">
+            {% if user.is_superuser or comentario.usuario == user %}
+                <h1>Editar comentario</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Guardar cambios" class="btn btn-primary">
+                </form>
+            {% else %}
+                <h1>Solo usuarios con permisos pueden acceder a esta página</h1>
+            {% endif %}
+        </div>
     </div>
-    {% else %}
-
-    <div class="container-fluid" style="margin: 300px;">
-        <h1>Solo usuarios con permisos pueden acceder a esta página</h1>
-    </div>
-    {% endif %}
-
-</center>
+    
+        
+    </body>
 {% endblock %}
