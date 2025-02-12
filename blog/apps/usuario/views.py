@@ -30,16 +30,18 @@ class LoginUsuario (LoginView):
     template_name = 'registration/login.html'
 
     def get_success_url(self):
-        messages.success(self.request, 'Login exitoso')
+        messages.success(self.request, '')
 
-        return reverse ('apps.usuario:login')
+        return reverse ('apps.posts:posts')
     
     
 class LogoutUsuario (LogoutView):
     template_name = 'registration/logout.html'
 
-    def get_succes_url (self):
-        messages.success(self.request, 'Logout exitoso')
+    def dispatch(self, request, *args, **kwargs):
+        response = super().dispatch(request, *args, **kwargs)
+        messages.success(request, '') 
+        return response
 
-        return reverse('apps.usuario:logout')
-    
+    def get_success_url(self):
+        return reverse_lazy('index') 

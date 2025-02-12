@@ -12,6 +12,7 @@
 <div class="container w-120">
     <div class="row justify-content-center">
       <div class="col-md-12 bg-dark p-4 rounded border border-light shadow">
+        <p class="text-light">{{ posts.categoria }}</p>
         <h1>{{ posts.titulo }}</h1>
         <h5>{{ posts.subtitulo }}</h5>
         <br>
@@ -22,9 +23,9 @@
       {% endif %}
       <br>
       <br>
-        <p class="text-light">{{ posts.categoria }}</p>
+        
         <hr>
-        <p>{{ posts.texto }}</p>
+        <p style="text-align: justify; white-space: pre-wrap; font-size: large;">{{ posts.texto }}</p>
   
        
   

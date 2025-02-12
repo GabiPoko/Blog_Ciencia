@@ -15,7 +15,7 @@ class Categoria (models.Model):
     
 class Post(models.Model):
     titulo = models.CharField(max_length=150, null=False)
-    subtitulo = models.CharField(max_length=200, null=True, blank=True)
+    subtitulo = models.CharField(max_length=200, null=True, blank=True, default="")
     fecha = models.DateTimeField(auto_now_add=True)
     texto = models.TextField(null=False)
     activo = models.BooleanField(default=True)
